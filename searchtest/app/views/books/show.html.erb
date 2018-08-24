@@ -1,37 +1,60 @@
-<p id="notice"><%= notice %></p>
+<head>
+  <style>
+    .dropdown-menu img { width: 120px; height: 22px; }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
 
-<p>
-  <strong>식당명:</strong>
-  <%= @book.name %>
-</p>
+<body>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>카테고리:</strong>
-  <%= @book.category %>
-</p>
+  <p>
+    <strong>식당명:</strong>
+    <%= @book.name %>
+  </p>
 
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    나의 별점은??
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#"> 
-    	<img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Star_rating_1_of_5.png"> </a>
-    <a class="dropdown-item" href="#">
-    	<img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Star_rating_2_of_5.png"></a>
-    <a class="dropdown-item" href="#">
-    	<img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Star_rating_3_of_5.png"></a>
-    <a class="dropdown-item" href="#">
-    	<img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Star_rating_4_of_5.png"></a>
-    <a class="dropdown-item" href="#">
-    	<img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Star_rating_5_of_5.png"></a>
+  <p>
+    <strong>카테고리:</strong>
+    <%= @book.category %>
+  </p>
+
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      나의 별점은??
+    </button>
+    <div class="whatstar">
+      <p>씨발</p>
+    </div>
+
+    <script>
+      $(document).ready(function(){
+        $("#dropdownMenuButton").click(function(){
+          $(".whatstar").hide();
+        });
+        $("#show").click(function(){
+          $("p").show();
+        });
+      });
+    </script>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">
+      	<img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Star_rating_1_of_5.png"> </a>
+      <a class="dropdown-item" href="#">
+      	<img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Star_rating_2_of_5.png"></a>
+      <a class="dropdown-item" href="#">
+      	<img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Star_rating_3_of_5.png"></a>
+      <a class="dropdown-item" href="#">
+      	<img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Star_rating_4_of_5.png"></a>
+      <a class="dropdown-item" href="#">
+      	<img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Star_rating_5_of_5.png"></a>
+    </div>
   </div>
-</div>
 
-<p>
-  <strong>위치:</strong>
-  <%= @book.location %>
-</p>
+  <p>
+    <strong>위치:</strong>
+    <%= @book.location %>
+  </p>
 
-<%= link_to '편집', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+  <%= link_to '편집', edit_book_path(@book) %> |
+  <%= link_to 'Back', books_path %>
+</body>

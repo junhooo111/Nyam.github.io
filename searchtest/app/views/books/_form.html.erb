@@ -30,8 +30,17 @@
     <%= form.label :location %>
     <%= form.text_field :location %>
   </div>
+  <!-- 별점이 들어갈 위치 -->
+  <div id="star"></div>
+
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+<script>
+$('#star').raty({
+  path: '/imgs'
+});
+</script>

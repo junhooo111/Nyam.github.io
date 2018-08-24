@@ -26,7 +26,7 @@
         <td><%= book.score %></td>
         <td><%= book.location %></td>
         <td><%= link_to 'Show', book %></td>
-        <td><%= link_to '편집', edit_book_path(book) %></td>
+        <td><%= link_to '편집', edit_book_path(book) %></ㄴtd>
         <td><%= link_to '삭제', book, method: :delete, data: { confirm: '삭제하시겠습니까?' } %></td>
       </tr>
     <% end %>
@@ -34,5 +34,8 @@
 </table>
 
 <br>
+
+
+
 
 <%= link_to '맛집 생성', new_book_path %>

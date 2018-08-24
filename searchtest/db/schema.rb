@@ -15,18 +15,8 @@ ActiveRecord::Schema.define(version: 2018_08_24_083517) do
   create_table "books", force: :cascade do |t|
     t.string "name"
     t.string "category"
-    t.decimal "price"
-    t.integer "isbn"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "searches", force: :cascade do |t|
-    t.string "keywords"
-    t.string "category"
-    t.decimal "min_price"
-    t.decimal "max_price"
-    t.integer "isbn"
+    t.float "score"
+    t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

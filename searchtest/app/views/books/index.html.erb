@@ -1,21 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Books</h1>
+<h1>맛집 목록</h1>
 
   <%= form_tag books_path, :method => 'get' do %>
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search" %>
+    <%= submit_tag "검색" %>
   <% end %>
   
-<%= link_to "Advanced Search", new_search_path %>
+<%= link_to "상세검색", new_search_path %>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Price</th>
-      <th>Isbn</th>
+      <th>식당명</th>
+      <th>카테고리</th>
+      <th>평점</th>
+      <th>위치</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,11 +25,11 @@
       <tr>
         <td><%= book.name %></td>
         <td><%= book.category %></td>
-        <td><%= book.price %></td>
-        <td><%= book.isbn %></td>
+        <td><%= book.score %></td>
+        <td><%= book.location %></td>
         <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '편집', edit_book_path(book) %></td>
+        <td><%= link_to '삭제', book, method: :delete, data: { confirm: '삭제하시겠습니까?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -37,4 +37,4 @@
 
 <br>
 
-<%= link_to 'New Book', new_book_path %>
+<%= link_to '맛집 생성', new_book_path %>

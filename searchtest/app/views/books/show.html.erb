@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>식당명:</strong>
   <%= @book.name %>
 </p>
 
 <p>
-  <strong>Category:</strong>
+  <strong>카테고리:</strong>
   <%= @book.category %>
 </p>
 
 <p>
-  <strong>Price:</strong>
-  <%= @book.price %>
+  <strong>평점:</strong>
+  <%= @book.score %>
 </p>
 
 <p>
-  <strong>Isbn:</strong>
-  <%= @book.isbn %>
+  <strong>위치:</strong>
+  <%= @book.location %>
 </p>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to '편집', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
